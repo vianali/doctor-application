@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+
+<br> <br>
+<h1>All Doctor Information</h1>
+<br> <br>
+
+<p>
+  <strong>First name:</strong>
+  <%= @doctor.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @doctor.last_name %>
+</p>
+
+<p>
+  <strong>License no:</strong>
+  <%= @doctor.license_no %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @doctor.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @doctor.phone_number %>
+</p>
+
+<br> <br>
+
+<%= link_to 'Back', doctors_path, class:"btn btn-primary btn-lg active" %>
