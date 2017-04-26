@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong><h1>Patients:</h1></strong>
+  <br>
+    <% @doctor.patients.each do |patient| %>
+          <%= patient_format(patient) %>
+          <br>
+          <%end%>
+</p>
+
+<br> <br>
+
+<%= link_to 'Back', doctors_path, class:"btn btn-primary btn-lg active" %>

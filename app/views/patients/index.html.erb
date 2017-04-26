@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<h1>Listing Patients</h1>
+<br>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Patient State</th>
+      <th>Patient Name</th>
+      <th>Patient Email</th>
+      <th>Patient Phone</th>
+      <th>Doctor id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.state %></td>
+        <td><%= patient.p_full_name %></td>
+        <td><%= patient.email %></td>
+        <td><%= number_to_phone(patient.phone_number) %></td>
+        <td><%= patient.doctor_id %></td>
+        <td><%= link_to 'Doctor Details', patient, class:"btn btn-primary btn-lg active" %></td>
+        <td><%= link_to 'Edit', edit_patient_path(patient), class:"btn btn-warning btn-lg active" %></td>
+        <td><%= link_to 'Destroy', patient, method: :delete, class:"btn btn-danger btn-lg active",data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Patient', new_patient_path, class:"btn btn-success btn btn-primary btn-lg btn-lg active" %>
+<br>
+
