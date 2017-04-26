@@ -1,33 +1,11 @@
 <p id="notice"><%= notice %></p>
-
-
-<br> <br>
-<h1>All Doctor Information</h1>
-<br> <br>
-
 <p>
-  <strong>First name:</strong>
-  <%= @doctor.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @doctor.last_name %>
-</p>
-
-<p>
-  <strong>License no:</strong>
-  <%= @doctor.license_no %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @doctor.email %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @doctor.phone_number %>
+  <strong><h1>Patients:</h1></strong>
+  <br>
+    <% @doctor.patients.each do |patient| %>
+          <%= patient_format(patient) %>
+          <br>
+          <%end%>
 </p>
 
 <br> <br>
